@@ -1,0 +1,33 @@
+.account {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-avatar {
+        width: 150px;
+        height: 150px;
+        background-color: #50b157;
+        text-align: center;
+        line-height: 3;
+        color: white;
+        font-size: 50px;
+        border-radius: 50%;
+        font-family: 'Carter One', cursive !important;
+
+    }
+
+    &-action {
+        button {
+            background: linear-gradient(-135deg, #57b847, #1281ca);
+            color: white;
+            width: 200px;
+            margin-top: 20px
+        }
+    }
+
+    mat-form-field {
+        display: block;
+        width: 100%;
+        max-width: 290px;
+    }
+}

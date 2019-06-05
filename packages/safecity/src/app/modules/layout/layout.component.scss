@@ -1,0 +1,77 @@
+.layout {
+    &-nav {
+        list-style: none;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 15px;
+            overflow: hidden;
+
+            li {
+                list-style: none;
+                padding: 10px 0;
+                font-size: 14px;
+
+                .avatar {
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    background-color: #52b454;
+                    text-align: center;
+                    line-height: 1.8;
+                    font-size: 50px;
+                    color: white;
+                    margin: 0 auto;
+
+                    font-family: 'Carter One', cursive;
+                }
+
+                p {
+                    color: white;
+                    margin-bottom: 0;
+                }
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+mat-toolbar {
+    background: linear-gradient(-135deg, #57b847, #1281ca);
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+/deep/ .mat-drawer-inner-container {
+    background: #1281ca;
+    border: none;
+    min-width: 200px;
+}
+
+.title-sf {
+    color: white
+}
+
+.layout-content {
+    max-width: 1270px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+
+    .title-sf {
+        color: #1281ca;
+        margin-bottom: 10px;
+    }
+
+}

@@ -1,0 +1,28 @@
+.reporting {
+    display: flex;
+
+    mat-form-field {
+        display: block;
+    }
+
+    h2 {
+        color: #666666;
+        margin-top: 0;
+    }
+
+    form {
+        width: calc(100% - 380px);
+        padding: 0 20px 20px;
+    }
+
+    button {
+        background: linear-gradient(-135deg, #57b847, #1281ca);
+        color: white;
+        width: 200px;
+    }
+
+    .from-action {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

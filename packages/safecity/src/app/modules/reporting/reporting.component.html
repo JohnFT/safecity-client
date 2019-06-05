@@ -1,0 +1,28 @@
+<h1 class="title-sf">Repor<span>ting</span></h1>
+<div class="reporting">
+  <div style="width: 640px; height: 480px" id="mapContainer"></div>
+  <form>
+    <h2>You want report a case?</h2>
+    <mat-form-field>
+      <input matInput placeholder="Address" required />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Type" required />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Case Name" required />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Case Description"
+        required
+        cols="30"
+        rows="10"
+      ></textarea>
+    </mat-form-field>
+    <div class="from-action">
+      <button mat-button>Report</button>
+    </div>
+  </form>
+</div>

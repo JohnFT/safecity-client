@@ -1,0 +1,30 @@
+<mat-drawer-container class="layout" autosize>
+  <mat-drawer #drawer mode="side">
+    <nav class="layout-nav">
+      <ul>
+        <li>
+          <div class="avatar">
+            SF
+          </div>
+          <p>John Alexander Fonseca</p>
+        </li>
+        <li><a  routerLink="/sf/reports">All Reports</a></li>
+        <li><a routerLink="/sf/reporting">Reporting</a></li>
+        <li><a routerLink="/sf/myreports">My Reports</a></li>
+        <li><a routerLink="/sf/call">Call Emegence</a></li>
+        <li><a routerLink="/sf/account">My Profie</a></li>
+      </ul>
+    </nav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar>
+      <h1 class="title-sf">Safe<span>City</span></h1>
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </mat-toolbar>
+    <div class="layout-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
