@@ -2,5 +2,142 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "packages",
-  "projects": {}
+  "projects": {
+    "safecity": {
+      "root": "packages/safecity/",
+      "sourceRoot": "packages/safecity/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/safecity",
+            "index": "packages/safecity/src/index.html",
+            "main": "packages/safecity/src/main.ts",
+            "polyfills": "packages/safecity/src/polyfills.ts",
+            "tsConfig": "packages/safecity/tsconfig.app.json",
+            "assets": [
+              "packages/safecity/src/favicon.ico",
+              "packages/safecity/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "packages/safecity/src/styles.scss"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "packages/safecity/src/environments/environment.ts",
+                  "with": "packages/safecity/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "safecity:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "safecity:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "safecity:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/safecity/src/test.ts",
+            "polyfills": "packages/safecity/src/polyfills.ts",
+            "tsConfig": "packages/safecity/tsconfig.spec.json",
+            "karmaConfig": "packages/safecity/karma.conf.js",
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "packages/safecity/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "packages/safecity/src/favicon.ico",
+              "packages/safecity/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/safecity/tsconfig.app.json",
+              "packages/safecity/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "safecity-e2e": {
+      "root": "packages/safecity-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "packages/safecity-e2e/protractor.conf.js",
+            "devServerTarget": "safecity:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "safecity:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "packages/safecity-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "safecity"
 }
